@@ -34,6 +34,12 @@ jobs:
       with:
           token: ${{ secrets.DEPENDENCY_GRAPH_TOKEN }}
 
-    - name: Bump version
-      id: bump
-      uses: org.codehaus.mojo:versions-maven-plugin:2.18.0:set
+    - name: Dispatch event to target repository
+      uses: actions/repository_dispatch@v2
+      with:
+        repository: 'reedmurphy-nice/mygitactions' # Replace with the target repository (org/repo)
+        event_type: 'my-custom-event' # Must match the event type in the target workflow
+        client_payload: '{"message": "Hello from the source repo!", "data": {}}' # Optional payload
+
+      env:
+        GITHUB_TOKEN: ${{ secrets.DEPENDENCY_GRAPH_TOKEN }} # Personal Access Token

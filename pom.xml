@@ -16,7 +16,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
-    <joda.version>2.10.4</joda.version>
+    <joda.version>2.13.1</joda.version>
     <junit.version>4.13.2</junit.version>
     <hibernate-core.version>5.3.7.Final</hibernate-core.version>
   </properties>
